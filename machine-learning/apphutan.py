@@ -1,7 +1,15 @@
 import streamlit as st
 import pandas as pd
 import pickle
-alibi = pickle.load(open('hutanrimba.pkl', mode='rb'))
+import os
+import pickle
+
+file_path = 'hutanrimba.pkl'
+if os.path.exists(file_path):
+    alibi = pickle.load(open(file_path, mode='rb'))
+else:
+    print(f"File {file_path} tidak ditemukan.")
+
 # Judul aplikasi
 st.title("Aplikasi hutan untuk Prediksi Nama Buah")
 
