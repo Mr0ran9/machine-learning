@@ -3,7 +3,13 @@ import pandas as pd
 import pickle
 import os
 
-alibi = pickle.load(open('hutanrimba.pkl', mode='rb'))
+file_path = os.path.join(os.path.dirname(__file__), 'hutanrimba.pkl')
+if os.path.exists(file_path):
+    alibi = pickle.load(open(file_path, mode='rb'))
+    model_loaded = True
+else:
+    st.error(f"File model `{file_path}` tidak ditemukan.")
+    model_loaded = False
     
 # Judul aplikasi
 st.title("Aplikasi Hutan untuk Prediksi Nama Buah")
