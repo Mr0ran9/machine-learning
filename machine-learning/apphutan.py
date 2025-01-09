@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 import os
 
-file_path = 'hutanrimba.pkl'
+file_path = '/path/to/hutanrimba.pkl'
 
 # Cek keberadaan file
 if os.path.exists(file_path):
